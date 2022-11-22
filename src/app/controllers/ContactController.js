@@ -51,8 +51,8 @@ class ContactController {
       name, email, phone, category_id,
     } = request.body;
 
-    const contactExistis = await ContactsRepository.findById(id);
-    if (!contactExistis) {
+    const contactExists = await ContactsRepository.findById(id);
+    if (!contactExists) {
       return response.status(404).json({ error: 'User not found' });
     }
 
